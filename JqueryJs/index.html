@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello jQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="hello.js"></script> -->
+        <script>
+        $(document).ready(function() {
+            $(function (){
+            var $orders = $('#orders');
+            $.ajax({
+                type: 'GET',
+                url: 'students.json',
+                success: function(response) {      // <= this is the change
+                    var data = response.data;
+                    // console.log(data);
+                    $.each(data, function(i, data){
+                        $orders.append('<li>key:'+i+' - dataid: '+data.id+'</li>');
+                    });
+
+                }
+            });
+        });
+        });
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <p class="greeting-id">The ID is </p>
+            <p class="greeting-content">The content is </p>
+        </div>
+        <div id="orders"></div>
+    </body>
+</html>
+
