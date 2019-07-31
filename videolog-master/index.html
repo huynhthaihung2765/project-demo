@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="js/jquery.video-log.js"></script>
+    <script src="js/_hung.js"></script>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h2>Console</h2>
+    <textarea rows="10" cols="40" id="log" readonly></textarea>
+    <div class="list-videos">
+
+        <h2> Vimeo Videos </h2>
+        <iframe id="vplayer2" class="trackable-video" src="https://player.vimeo.com/video/134957419" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="vplayer1" class="trackable-video" src="https://player.vimeo.com/video/76979871" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe id="vplayer3" class="trackable-video" src="https://player.vimeo.com/video/350913053" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+    <script>
+        jQuery(document).ready(function($) {
+
+            $(".trackable-video").videoLog({
+            });
+        });
+        // (function() {
+        //     if (!console) {
+        //         console = {};
+        //     }
+        //     var old = console.log;
+        //     var logger = document.getElementById('log');
+        //     console.log = function(message) {
+        //         if (typeof message == 'object') {
+        //             logger.innerHTML += (JSON && JSON.stringify ?
+        //                 JSON.stringify(message) :
+        //                 String(message)) + '\n';
+        //         } else {
+        //             logger.innerHTML += message + '\n';
+        //         }
+        //     }
+        // })();
+    </script>
+</body>
+</html>
