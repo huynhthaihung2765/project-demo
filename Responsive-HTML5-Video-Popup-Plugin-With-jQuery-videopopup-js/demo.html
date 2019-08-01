@@ -12,9 +12,10 @@
 <body>
 <br /><br />
 <h1>jQuery videopopup.js Demo</h1>
-<a href="javascript:void(0)" id="video2">-- open video --</a>
+<a href="javascript:void(0)" id="video1">-- open video 1 --</a>
 <br />
-<a href="javascript:void(0)" id="video1">-- open video --</a>
+<a href="javascript:void(0)" id="video2">-- open video 2 --</a>
+
 <div id="vidBox">
   <div id="videCont">
 		<video autoplay id="v1" loop controls>
@@ -23,13 +24,29 @@
     </video>
   </div>
 </div>
+
+<div id="vidBox2">
+  <div id="videCont">
+    <video autoplay id="v2" loop controls>
+      <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+    </video>
+  </div>
+</div>
+
 <script type="text/javascript">
   $(function () {
      $('#vidBox').VideoPopUp({
       	backgroundColor: "#17212a",
-      	opener: "video2",
+      	opener: "video1",
           maxweight: "340",
           idvideo: "v1"
+      });
+     $('#vidBox2').VideoPopUp({
+        backgroundColor: "#B40202",
+        opener: "video2",
+          maxweight: "340",
+          idvideo: "v2"
       });
   });
 </script>
