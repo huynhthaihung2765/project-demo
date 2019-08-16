@@ -13,13 +13,23 @@
             if ($this.is("iframe")) {
                 if ($this.attr('src').indexOf("vimeo") > -1) {
 
+                    // Hung Huynh
+                    var name = $("#vimeo").text();
+                    var d = new Date();
+
+                    var month = d.getMonth()+1;
+                    var day = d.getDate();
+
+                    var currentDay = d.getFullYear() + '/' +
+                        ((''+month).length<2 ? '0' : '') + month + '/' +
+                        ((''+day).length<2 ? '0' : '') + day;
                     // Vimeo API Script
                     var id = this.id;
                     var player = new Vimeo.Player(id);
 
                     player.on('pause', function () {
                         player.getCurrentTime().then(function (seconds) {
-                            console.log('Vimeo video ' + id + ' paused at: ' + seconds);
+                            console.log( currentDay + ': ' + name + ' paused at: ' + seconds);
                             playPauseAt(seconds);
 
                         }).catch(function (error) {
@@ -30,7 +40,7 @@
                     player.on('play', function () {
                         player.on('timeupdate', function () {
                             player.getCurrentTime().then(function (seconds) {
-                                var playCheck = console.log('Vimeo video ' + id + ' played at: ' + seconds);
+                                var playCheck = console.log( name + ' played at: ' + seconds );
                             }).catch(function (error) {
                                 console.log("There was an error");
                             });

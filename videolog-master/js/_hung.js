@@ -1,4 +1,5 @@
 function playPauseAt(seconds)
 {
-	alert(seconds);
+	// alert(seconds);
+	
 }
